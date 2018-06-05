@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Login Fatec</title>
+  <title>Login Etec</title>
 
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
@@ -14,17 +14,21 @@
 <body>
   <div class="container">
     <div class="info">
-      <h1>Login Fatec</h1>
-      <span>Feito com muito
-        <i class="fa fa-heart"></i> pelo
-        <a href="http://andytran.me">Andy Tran</a>
+      <h1>Login Etec</h1>
+      <span>
+        Feito com muito <i class="fa fa-heart"></i> pelo <a href="http://andytran.me">Andy Tran</a>
       </span>
     </div>
   </div>
 
+  <?php if (isset($_COOKIE["loged_user"])) {
+    header("Location: home.php");
+    die();
+  } ?>
+
   <?php if (isset($_GET["loginerror"])) { ?>
     <div class="alert alert-danger">
-      <strong>Erro!</strong> usuário ou senha inválido
+      <strong>Erro!</strong> usuário ou senha inválidos
     </div>
   <?php } ?>
 
